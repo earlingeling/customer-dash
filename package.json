@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "HOST=0.0.0.0 next dev -p 4002",
+    "dev": "next dev -p 4002 -H 93.123.72.91",
     "build": "next build",
     "start": "next start -p 4002",
     "lint": "next lint"
