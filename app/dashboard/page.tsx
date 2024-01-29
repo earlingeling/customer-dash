@@ -4,9 +4,9 @@ import { getUsers, User } from '../api/apiguide';
 
 // Remove the ? to make the username required
 interface DashboardProps {
-  authorized?: boolean;
-  username?: string;
-  onLogout?: () => void;
+  authorized: boolean;
+  username: string;
+  onLogout: () => void;
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ authorized, username, onLogout }) => {
@@ -15,11 +15,13 @@ const Dashboard: React.FC<DashboardProps> = ({ authorized, username, onLogout })
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
+    if (username) {
     const fetchUsers = async () => {
       const usersData = await getUsers(username || "");
       setUsers(usersData);
     }
     fetchUsers();
+  }
   }
   , [username]);
   
