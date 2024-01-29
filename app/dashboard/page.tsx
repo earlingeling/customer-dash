@@ -4,12 +4,12 @@ import { getUsers, User } from '../api/apiguide';
 
 // Remove the ? to make the username required
 interface DashboardProps {
-  authorized: boolean;
+  authorized?: boolean;
   username: string;
   onLogout: () => void;
 }
 
-const Dashboard: React.FC<DashboardProps> = ({ authorized, username, onLogout }) => {
+const Dashboard: React.FC<DashboardProps> = ({ username, onLogout }) => {
 
   // use getUsers function from test/page.tsx to get users
   const [users, setUsers] = useState<User[]>([]);
