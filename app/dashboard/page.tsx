@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { getUsers, User } from '../api/apiguide';
 
 // Remove the ? to make the username required
@@ -54,11 +53,11 @@ const Dashboard: React.FC<DashboardProps> = ({ authorized, username, onLogout })
         ))}
       </ul>
       <button
-        className="mt-8 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-        onClick={onLogout}
-      >
-        Log out
-      </button>
+      className="mt-8 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      onClick={() => onLogout && onLogout()}
+    >
+      Log out
+    </button>
     </div>
   );
 };
